@@ -1,4 +1,4 @@
-# 🏴‍☠️ English Learning
+# 📚 English Learning
 
 A web application built with Base44 to help you memorize and learn English words through interactive cards, quizzes, and a memory game.
 <br><br>
