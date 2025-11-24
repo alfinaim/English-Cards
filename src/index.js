@@ -3,7 +3,7 @@ import App from './App';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Games from './pages/Games';
 import Quiz from './pages/Quiz';
@@ -13,16 +13,18 @@ import Learn from './pages/Learn';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* Redirect from "/" to "/learn" */}
+          <Route index element={<Navigate to="learn" />} />
           <Route path="learn" element={<Learn />} />
           <Route path="quiz" element={<Quiz />} />
           <Route path="managewords" element={<ManageWords />} />
           <Route path="games" element={<Games />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
